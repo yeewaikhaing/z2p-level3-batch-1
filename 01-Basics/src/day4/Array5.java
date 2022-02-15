@@ -9,13 +9,14 @@ public class Array5 {
 				{1,2}
 		};
 		
-		//forloop
+		//for loop
 		System.out.println("*** foreach ****");
-		for(var r = 0; r< data.length;r++) {
+		for(var r = 0; r < data.length;r++) {
 			for(var c = 0; c < data[r].length;c++)
 				System.out.print(data[r][c] + "\t");
 			System.out.println();
 		}
+		
 		System.out.println("*** foreach ****");
 		for(var row : data) {
 			for(var col: row)
