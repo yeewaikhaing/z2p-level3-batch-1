@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="597.0" prefWidth="635.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.RegisterController">
+   <children>
+      <Label layoutX="197.0" layoutY="22.0" text="Register Form" textFill="#3b2bed">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Pane layoutX="104.0" layoutY="81.0" prefHeight="73.0" prefWidth="374.0">
+         <children>
+            <Label layoutX="9.0" layoutY="25.0" text="Username" />
+            <TextField fx:id="txt_name" layoutX="88.0" layoutY="21.0" prefHeight="26.0" prefWidth="207.0" />
+         </children>
+      </Pane>
+      <Label layoutX="112.0" layoutY="155.0" text="Password" />
+      <PasswordField fx:id="txt_pass" layoutX="190.0" layoutY="150.0" prefHeight="26.0" prefWidth="207.0" />
+      <Label layoutX="112.0" layoutY="198.0" text="Birthday" />
+      <DatePicker fx:id="birthday_picker" layoutX="190.0" layoutY="192.0" prefHeight="26.0" prefWidth="207.0" />
+      <Label layoutX="112.0" layoutY="243.0" text="City" />
+      <ComboBox fx:id="cbo_city" layoutX="190.0" layoutY="238.0" prefHeight="26.0" prefWidth="207.0" promptText="Choose City" />
+      <Label layoutX="112.0" layoutY="284.0" text="Gender" />
+      <RadioButton layoutX="190.0" layoutY="284.0" mnemonicParsing="false" selected="true" text="Male">
+         <toggleGroup>
+            <ToggleGroup fx:id="radio_group" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton layoutX="266.0" layoutY="284.0" mnemonicParsing="false" text="Female" toggleGroup="$radio_group" />
+      <Label layoutX="112.0" layoutY="318.0" text="Skillsets" />
+      <CheckBox fx:id="chk_java" layoutX="185.0" layoutY="318.0" mnemonicParsing="false" text="Java" />
+      <CheckBox fx:id="chk_mysql" layoutX="246.0" layoutY="318.0" mnemonicParsing="false" text="MySQL" />
+      <CheckBox fx:id="chk_js" layoutX="329.0" layoutY="318.0" mnemonicParsing="false" text="Javascript" />
+      <TextArea fx:id="edu_textarea" layoutX="113.0" layoutY="385.0" prefHeight="126.0" prefWidth="307.0" promptText="Optional" />
+      <Label layoutX="113.0" layoutY="364.0" text="Education" />
+      <Button layoutX="197.0" layoutY="531.0" mnemonicParsing="false" onAction="#btn_register_click" prefHeight="26.0" prefWidth="127.0" text="Register" />
+      <Button layoutX="525.0" layoutY="544.0" mnemonicParsing="false" onAction="#btn_login_click" prefHeight="26.0" prefWidth="80.0" text="Login" />
+   </children>
+</AnchorPane>
