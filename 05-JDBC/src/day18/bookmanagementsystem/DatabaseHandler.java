@@ -200,7 +200,15 @@ public class DatabaseHandler {
 			pstm.setString(2, author.getCountry());
 			
 			pstm.executeUpdate();
-			
+			// id,name
+			// insert into user(name)values ('su');
+			/**
+			 * id
+			 * 1
+			 * 2
+			 * 3
+			 * 
+			 */
 			ResultSet rs = pstm.getGeneratedKeys();
 			rs.next();
 			int id = rs.getInt(1);

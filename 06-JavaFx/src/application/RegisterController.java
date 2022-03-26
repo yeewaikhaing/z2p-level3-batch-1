@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 import javafx.collections.FXCollections;
@@ -11,6 +12,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
@@ -43,6 +45,12 @@ public class RegisterController implements Initializable{
 	}
 	@FXML
 	public void btn_register_click() {
+		Alert alert1 = new Alert(AlertType.CONFIRMATION);
+		alert1.setContentText("Areay oy");
+		Optional<ButtonType> result = alert1.showAndWait();
+		if(result != null && result.get() == ButtonType.OK) {
+			System.out.println("kkkk");
+		}
 		String name = txt_name.getText();
 		String pass = txt_pass.getText();
 		LocalDate birthday = birthday_picker.getValue();
