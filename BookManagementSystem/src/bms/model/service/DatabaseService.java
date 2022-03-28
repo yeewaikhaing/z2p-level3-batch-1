@@ -41,7 +41,7 @@ public class DatabaseService {
 		List<Category> list = new ArrayList<>();
 		try (Connection con = MyConnection.getConnection()) {
 
-			String query = "SELECT * FROM categories";
+			String query = "SELECT * FROM categories ORDER BY category_id";
 			PreparedStatement pstm = con.prepareStatement(query);
 			ResultSet rs = pstm.executeQuery();
 
@@ -231,6 +231,55 @@ public class DatabaseService {
 			e.printStackTrace();
 		}
 		return list;
+	}
+
+	public static boolean deleteBookByCode(int code) {
+		boolean result = false;
+		try(Connection con = MyConnection.getConnection()) {
+			String query = "DELETE FROM books WHERE code = ?";
+			PreparedStatement pstm = con.prepareStatement(query);
+			pstm.setInt(1, code);
+			
+			pstm.executeUpdate();
+			result = true;
+		}
+		catch (Exception e) {
+			
+		}
+		return result;
+	}
+
+	public static void updateAuthor(Author author) {
+		
+		try(Connection con = MyConnection.getConnection()) {
+			String query = "UPDATE authors SET name = ?, country = ? WHERE author_id = ?";
+			PreparedStatement pstm = con.prepareStatement(query);
+			pstm.setString(1, author.getName());
+			pstm.setString(2, author.getCountry());
+			pstm.setInt(3, author.getId());
+			
+			pstm.executeUpdate();
+		}
+		catch (Exception e) {
+			
+		}
+		
+	}
+
+	public static void saveAuthor(String name, String country) {
+		
+		try (Connection con = MyConnection.getConnection()) {
+			String query = "INSERT INTO authors(name,country)VALUES(?,?)";
+			PreparedStatement pstm = con.prepareStatement(query);
+			pstm.setString(1, name);
+			pstm.setString(2, country);
+			
+			pstm.executeUpdate();
+		}
+		catch (Exception e) {
+			
+		}
+		
 	}
 
 }

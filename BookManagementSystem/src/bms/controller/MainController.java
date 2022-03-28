@@ -17,11 +17,11 @@ public class MainController {
 		}
 	}
 	@FXML
-	public void author_click() {
-		
+	public void author_click() throws IOException {
+		BMS_Main.changeScene("view/Authors.fxml");
 	}
 	@FXML
-	public void category_click() {
-		
+	public void category_click() throws IOException {
+		BMS_Main.changeScene("view/Categories.fxml");
 	}
 }

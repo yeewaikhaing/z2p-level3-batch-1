@@ -18,7 +18,7 @@ public class BMS_Main extends Application {
 	@Override
 	public void start(Stage stage) {
 		try {
-			AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("view/Books.fxml"));
+			AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("view/Main.fxml"));
 			Scene scene = new Scene(root);
 			primaryStage = stage;
 			primaryStage.setScene(scene);
